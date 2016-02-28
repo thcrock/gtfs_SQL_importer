@@ -221,13 +221,12 @@ create table gtfs_trips (
   route_id text , --REFERENCES gtfs_routes(route_id),
   service_id    text , --REFERENCES gtfs_calendar(service_id),
   trip_id text ,--PRIMARY KEY,
-  trip_headsign text,
   direction_id  int , --REFERENCES gtfs_directions(direction_id),
   block_id text,
   shape_id text,  
-  trip_short_name text,
-  -- unofficial features
-  trip_type text
+direction text,
+wheelchair_accessible integer,
+schd_trip_id text
 );
 
 create table gtfs_stop_times (
